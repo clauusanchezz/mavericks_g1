@@ -1,1 +1,6 @@
 streamlit
+openai
+python-dotenv
+
+openai
+python-dotenv

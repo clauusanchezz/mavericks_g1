@@ -1,0 +1,615 @@
+ID: FAQ_01
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué es un préstamo hipotecario?
+RESPUESTA: Es un préstamo que normalmente se utiliza para comprar una vivienda y que se devuelve mediante cuotas. La vivienda sirve como garantía del pago. Conviene distinguirlo de un crédito hipotecario, en el que puedes disponer de dinero hasta un límite según las condiciones pactadas.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Explicar el producto. Si solicita una oferta o aprobación, pasar al banco.
+FUENTES:
+[F01] Préstamo o crédito hipotecario | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/primerospasoscon/Prestamo_o_credito_hipotecario.html
+
+---
+
+ID: FAQ_02
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué documentación necesito para pedir una hipoteca?
+RESPUESTA: El banco necesita comprobar tu identidad, situación económica y la vivienda que quieres financiar. Como orientación, puede pedir justificantes de ingresos, información sobre deudas y documentación del inmueble. La lista exacta depende de tu perfil y de la entidad; debe confirmártela antes de tramitar la solicitud.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: Dar una lista orientativa. Recoger documentos solo en el canal seguro autorizado.
+FUENTES:
+[F02] Contratación de la hipoteca | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/primerospasoscon/Contratacion_de_la_hipoteca.html
+
+---
+
+ID: FAQ_03
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cuánto dinero me puede prestar el banco?
+RESPUESTA: Depende de tu capacidad de pago, las características del inmueble y la política de riesgos de la entidad. El Banco de España describe el 80 % del valor de tasación como una referencia habitual, no como un derecho ni un límite universal. Tu financiación concreta necesita una evaluación individual.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: No convertir una práctica habitual en una regla de aprobación automática.
+FUENTES:
+[F03] Consejos para firmar tu primera hipoteca | https://clientebancario.bde.es/pcb/es/blog/consejos-para-firmar-tu-primera-hipoteca.html
+
+---
+
+ID: FAQ_04
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué cuota puedo permitirme con mi sueldo?
+RESPUESTA: Para orientarte hay que considerar tus ingresos netos, otras deudas, gastos habituales y un margen para imprevistos. Podemos calcular qué porcentaje de tus ingresos representarían tus cuotas, pero ese resultado no garantiza que la hipoteca sea asequible ni que el banco la apruebe.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Pedir ingresos y cuotas de otras deudas; distinguir orientación y evaluación de solvencia.
+FUENTES:
+[F03] Consejos para firmar tu primera hipoteca | https://clientebancario.bde.es/pcb/es/blog/consejos-para-firmar-tu-primera-hipoteca.html
+
+---
+
+ID: FAQ_05
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cuánto necesito tener ahorrado para comprar?
+RESPUESTA: Necesitas cubrir la parte del precio que no financie el préstamo y los gastos e impuestos que te correspondan. Los gastos de compraventa y los del préstamo son conceptos distintos. La cifra depende del inmueble, la financiación, tu situación y la normativa territorial aplicable.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Pedir precio, préstamo previsto y gastos confirmados; no fijar un porcentaje universal.
+FUENTES:
+[F03] Consejos para firmar tu primera hipoteca | https://clientebancario.bde.es/pcb/es/blog/consejos-para-firmar-tu-primera-hipoteca.html
+[F09] ¿Qué gastos te toca pagar cuando contratas una hipoteca? | https://clientebancario.bde.es/pcb/es/blog/que-gastos-te-toca-pagar-cuando-contratas-una-hipoteca-.html
+
+---
+
+ID: FAQ_06
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué significa que una hipoteca sea fija?
+RESPUESTA: El tipo de interés permanece fijo durante el plazo pactado. En una operación con cuotas constantes, esto aporta estabilidad a la cuota del préstamo. Debes revisar por separado los seguros, comisiones y bonificaciones: otros costes o el incumplimiento de condiciones comerciales pueden afectar al desembolso total.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Explicar estabilidad del interés sin prometer que todos los gastos sean invariables.
+FUENTES:
+[F04] Hipoteca a tipo fijo, variable, mixto… por cuál decidirse | https://clientebancario.bde.es/pcb/es/blog/hipoteca-a-tipo-fijo--variable--mixto%E2%80%A6cuesta-decidir.html
+
+---
+
+ID: FAQ_07
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cómo funciona una hipoteca variable y qué es el euríbor?
+RESPUESTA: El interés se revisa según el índice y el diferencial acordados. El euríbor es uno de los índices utilizados; por ejemplo, un índice hipotético del 2 % más un diferencial del 1 % daría un tipo del 3 %. La cuota cambia en las revisiones previstas en el contrato.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Ejemplo hipotético. Para revisar una cuota, confirmar índice, fecha, capital y plazo pendientes.
+FUENTES:
+[F04] Hipoteca a tipo fijo, variable, mixto… por cuál decidirse | https://clientebancario.bde.es/pcb/es/blog/hipoteca-a-tipo-fijo--variable--mixto%E2%80%A6cuesta-decidir.html
+
+---
+
+ID: FAQ_08
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué es una hipoteca mixta?
+RESPUESTA: Combina un periodo a interés fijo con otro a interés variable. Al terminar el tramo fijo, la cuota dependerá de las condiciones de revisión pactadas. Para compararla, hay que revisar tanto el tramo inicial como el índice, diferencial y costes que se aplicarán después.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: No comparar productos usando únicamente la cuota del periodo inicial.
+FUENTES:
+[F04] Hipoteca a tipo fijo, variable, mixto… por cuál decidirse | https://clientebancario.bde.es/pcb/es/blog/hipoteca-a-tipo-fijo--variable--mixto%E2%80%A6cuesta-decidir.html
+
+---
+
+ID: FAQ_09
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cuál es la diferencia entre el TIN y la TAE?
+RESPUESTA: El TIN expresa el tipo de interés nominal. La TAE expresa un coste anual equivalente e incorpora los gastos y comisiones que corresponden según sus reglas de cálculo. Ayuda a comparar ofertas, pero hay que revisar también sus supuestos. En una hipoteca variable, no predice el coste futuro real.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Calcular la cuota con el tipo contractual correspondiente; no sustituir el TIN por la TAE.
+FUENTES:
+[F05] Tipos de interés | https://clientebancario.bde.es/pcb/es/menu-horizontal/podemosayudarte/tiposinteres/
+[F08] BOE-A-2019-3814 Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario. | https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814
+
+---
+
+ID: FAQ_10
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cómo comparo dos ofertas hipotecarias?
+RESPUESTA: Compara importes y plazos equivalentes, TAE, cuota, coste total y comisiones. Revisa también cuánto cuestan los productos necesarios para obtener bonificaciones y qué ocurre si dejas de cumplirlas. Una oferta con menor interés anunciado puede tener otros costes que debas valorar.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Solicitar las condiciones completas y comparar con y sin bonificaciones cuando proceda.
+FUENTES:
+[F02] Contratación de la hipoteca | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/primerospasoscon/Contratacion_de_la_hipoteca.html
+[F05] Tipos de interés | https://clientebancario.bde.es/pcb/es/menu-horizontal/podemosayudarte/tiposinteres/
+
+---
+
+ID: FAQ_11
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué datos necesitas para calcular una cuota?
+RESPUESTA: Para una simulación básica necesito el capital que pedirías, el plazo y el tipo de interés. También debemos fijar el sistema de amortización y la periodicidad de los pagos. Si el préstamo es variable o mixto, habrá que definir escenarios y los tramos correspondientes.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Confirmar importe, años, TIN, modalidad y pagos antes de ejecutar el cálculo.
+FUENTES:
+[F07] Simulador de préstamo hipotecario o personal | https://clientebancario.bde.es/pcb/es/menu-horizontal/podemosayudarte/simuladores/simulador_prestamo_hipotecario_personal.html
+
+---
+
+ID: FAQ_12
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cuánto pagaría por 200.000 euros a 25 años?
+RESPUESTA: Con un TIN fijo hipotético del 3 %, pagos mensuales y sistema francés, la cuota sería aproximadamente 948,42 euros al mes. La cifra corresponde a capital e intereses: no incluye comisiones, seguros ni otros gastos. Es un ejemplo calculado para la demo, no una oferta del banco.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Si el cliente no indica el tipo, preguntarlo o proponer un supuesto explícito.
+SUPUESTOS_DEL_EJEMPLO: Sistema francés, pagos mensuales al final de cada periodo y tipo fijo en cada escenario; sin carencia, comisiones, seguros, impuestos ni amortizaciones adicionales. Los tipos son hipotéticos. Cálculos con precisión interna y redondeo al presentar.
+FUENTES:
+[F06] Cuota hipotecaria | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/primerospasoscon/Cuota_hipotecaria.html
+[C1] Cálculo propio reproducible: cuota = C*r/(1-(1+r)**(-n)); r = TIN anual en tanto por uno / 12; n = años*12. Si r=0: cuota=C/n. Intereses totales=cuota exacta*n-C. Comparar escenarios manteniendo constantes los demás supuestos.
+
+---
+
+ID: FAQ_13
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Y si alargo el plazo de 25 a 30 años?
+RESPUESTA: Para un préstamo de 200.000 euros con un TIN fijo hipotético del 3 %, al ampliar el plazo de 25 a 30 años, la cuota bajaría de 948,42 a 843,21 euros. Pagarías unos 105,21 euros menos al mes, pero aproximadamente 19.028,12 euros más de intereses durante todo el préstamo. Un plazo mayor reduce la cuota, aunque aumenta el coste por intereses bajo estos supuestos.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Mantener capital y tipo constantes para aislar el efecto del plazo.
+SUPUESTOS_DEL_EJEMPLO: Sistema francés, pagos mensuales al final de cada periodo y tipo fijo en cada escenario; sin carencia, comisiones, seguros, impuestos ni amortizaciones adicionales. Los tipos son hipotéticos. Cálculos con precisión interna y redondeo al presentar.
+FUENTES:
+[C1] Cálculo propio reproducible: cuota = C*r/(1-(1+r)**(-n)); r = TIN anual en tanto por uno / 12; n = años*12. Si r=0: cuota=C/n. Intereses totales=cuota exacta*n-C. Comparar escenarios manteniendo constantes los demás supuestos.
+
+---
+
+ID: FAQ_14
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué pasaría si el interés subiese un punto?
+RESPUESTA: Podemos calcular un escenario con un tipo un punto porcentual mayor. En una simulación de 200.000 euros a 25 años, pasar del 3 % al 4 % elevaría la cuota de 948,42 a 1.055,67 euros. En un préstamo ya iniciado, se usan el capital y el plazo pendientes.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Distinguir un punto porcentual de un aumento relativo del 1 %.
+SUPUESTOS_DEL_EJEMPLO: Sistema francés, pagos mensuales al final de cada periodo y tipo fijo en cada escenario; sin carencia, comisiones, seguros, impuestos ni amortizaciones adicionales. Los tipos son hipotéticos. Cálculos con precisión interna y redondeo al presentar.
+FUENTES:
+[C1] Cálculo propio reproducible: cuota = C*r/(1-(1+r)**(-n)); r = TIN anual en tanto por uno / 12; n = años*12. Si r=0: cuota=C/n. Intereses totales=cuota exacta*n-C. Comparar escenarios manteniendo constantes los demás supuestos.
+
+---
+
+ID: FAQ_15
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué pasa si pido 10.000 euros menos?
+RESPUESTA: Con el mismo plazo de 25 años y TIN fijo hipotético del 3 %, pedir 190.000 euros en lugar de 200.000 reduciría la cuota a unos 901,00 euros. La bajada sería de unos 47,42 euros mensuales. Antes de aportar más entrada, conviene reservar fondos para gastos e imprevistos.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Mantener el resto de supuestos. No modificar el capital sin confirmar la intención.
+SUPUESTOS_DEL_EJEMPLO: Sistema francés, pagos mensuales al final de cada periodo y tipo fijo en cada escenario; sin carencia, comisiones, seguros, impuestos ni amortizaciones adicionales. Los tipos son hipotéticos. Cálculos con precisión interna y redondeo al presentar.
+FUENTES:
+[C1] Cálculo propio reproducible: cuota = C*r/(1-(1+r)**(-n)); r = TIN anual en tanto por uno / 12; n = años*12. Si r=0: cuota=C/n. Intereses totales=cuota exacta*n-C. Comparar escenarios manteniendo constantes los demás supuestos.
+
+---
+
+ID: FAQ_16
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cómo sé cuánto pagaré de intereses en total?
+RESPUESTA: En un préstamo a tipo fijo sin cambios ni gastos adicionales, puedes sumar todas las cuotas y restar el capital recibido. En el ejemplo de 200.000 euros a 25 años y 3 % TIN, los intereses serían unos 84.526,79 euros. No equivalen al coste total si existen otros gastos.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Sumar con precisión interna; redondear al presentar y explicar posibles ajustes de céntimos.
+SUPUESTOS_DEL_EJEMPLO: Sistema francés, pagos mensuales al final de cada periodo y tipo fijo en cada escenario; sin carencia, comisiones, seguros, impuestos ni amortizaciones adicionales. Los tipos son hipotéticos. Cálculos con precisión interna y redondeo al presentar.
+FUENTES:
+[F06] Cuota hipotecaria | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/primerospasoscon/Cuota_hipotecaria.html
+[C1] Cálculo propio reproducible: cuota = C*r/(1-(1+r)**(-n)); r = TIN anual en tanto por uno / 12; n = años*12. Si r=0: cuota=C/n. Intereses totales=cuota exacta*n-C. Comparar escenarios manteniendo constantes los demás supuestos.
+
+---
+
+ID: FAQ_17
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Por qué al principio pago más intereses que capital?
+RESPUESTA: En el sistema francés, los intereses de cada periodo se calculan sobre el capital pendiente. Al principio debes más dinero, por lo que una parte mayor de la cuota se destina a intereses. Conforme se reduce la deuda, aumenta la parte de cuota que devuelve capital, si el tipo no cambia.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Mostrar una fila del cuadro de amortización si pide un ejemplo.
+FUENTES:
+[F06] Cuota hipotecaria | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/primerospasoscon/Cuota_hipotecaria.html
+
+---
+
+ID: FAQ_18
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Podéis decirme cuánto pagaré dentro de cinco años si es variable?
+RESPUESTA: Podemos construir escenarios, pero no garantizar el tipo futuro ni la cuota real. Cada escenario debe mostrar el índice supuesto, el diferencial y la fecha de revisión. La cuota futura también dependerá del capital pendiente y del plazo que quede cuando se aplique la revisión.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Presentar escenarios como hipótesis; no anunciar una previsión como certeza.
+FUENTES:
+[F04] Hipoteca a tipo fijo, variable, mixto… por cuál decidirse | https://clientebancario.bde.es/pcb/es/blog/hipoteca-a-tipo-fijo--variable--mixto%E2%80%A6cuesta-decidir.html
+[F08] BOE-A-2019-3814 Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario. | https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814
+
+---
+
+ID: FAQ_19
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: Si la simulación me sale bien, ¿ya tengo la hipoteca aprobada?
+RESPUESTA: No. La simulación estima pagos bajo unos supuestos; la concesión depende del estudio de solvencia y de la decisión del banco. Para conocer el estado de una solicitud concreta es necesario consultar el expediente por el canal autorizado.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: No equiparar una cuota calculada, una preevaluación y una aprobación.
+FUENTES:
+[F02] Contratación de la hipoteca | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/primerospasoscon/Contratacion_de_la_hipoteca.html
+
+---
+
+ID: FAQ_20
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué interés me ofrecéis hoy y cuál es vuestra mejor hipoteca?
+RESPUESTA: Para darte una oferta necesito consultar el catálogo vigente del banco y sus condiciones para tu perfil. Esta base general no contiene ofertas comerciales verificadas de una entidad concreta. Puedo explicarte las modalidades y ayudarte a comparar condiciones confirmadas por el banco.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: Regla del prototipo: sin catálogo autorizado y actualizado, no inventar tipos ni promociones.
+FUENTES:
+[P1] Diseño propuesto para la demo: no describe funciones reales ni políticas del banco. Sin integración autorizada, el asistente informa y prepara solicitudes; no confirma consultas privadas, aprobaciones, bloqueos ni transferencias ejecutadas.
+
+---
+
+ID: FAQ_21
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué son la FEIN y la FiAE? ¿Cuándo las recibo?
+RESPUESTA: La FEIN contiene la oferta hipotecaria personalizada; la FiAE destaca advertencias relevantes. Para operaciones sujetas a la Ley 5/2019, deben facilitarse con una antelación mínima de diez días naturales antes de firmar. El calendario concreto debe comprobarse con la entidad y el notario, incluida cualquier exigencia adicional aplicable.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Explicar la documentación; para confirmar una fecha de firma, derivar al expediente.
+FUENTES:
+[F08] BOE-A-2019-3814 Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario. | https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814
+
+---
+
+ID: FAQ_22
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Para qué tengo que ir al notario antes de firmar?
+RESPUESTA: El notario comprueba que has recibido la documentación y te explica las condiciones y sus consecuencias. El acta previa de transparencia prevista en la Ley 5/2019 es gratuita y debe formalizarse, como máximo, el día anterior a la firma. No es la misma actuación que la escritura del préstamo.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: No confundir la gratuidad del acta previa con todos los costes notariales.
+FUENTES:
+[F08] BOE-A-2019-3814 Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario. | https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814
+
+---
+
+ID: FAQ_23
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Quién paga los gastos de constituir la hipoteca?
+RESPUESTA: En operaciones sujetas al reparto de la Ley 5/2019, el cliente paga la tasación y las copias notariales que solicite. El banco asume los gastos de notaría de la escritura del préstamo, registro, gestoría y el impuesto que le corresponda. Los gastos de compraventa se calculan por separado.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Confirmar fecha y ámbito de la operación; no aplicar este reparto a toda hipoteca histórica.
+FUENTES:
+[F09] ¿Qué gastos te toca pagar cuando contratas una hipoteca? | https://clientebancario.bde.es/pcb/es/blog/que-gastos-te-toca-pagar-cuando-contratas-una-hipoteca-.html
+
+---
+
+ID: FAQ_24
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Tengo que contratar el seguro con el banco?
+RESPUESTA: Cuando el banco exija determinados seguros como garantía del préstamo, debe aceptar pólizas alternativas con condiciones y prestaciones equivalentes, sin cobrar por analizarlas ni empeorar por ello las condiciones del préstamo. Deben revisarse aparte los productos combinados y sus bonificaciones para entender el coste y las condiciones de cada oferta.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Distinguir seguro exigido y contratación combinada; revisar la oferta concreta si hay dudas.
+FUENTES:
+[F10] ¿Puede imponerme el banco su seguro con la hipoteca? | https://clientebancario.bde.es/pcb/es/blog/seguro-hipotecas.html
+
+---
+
+ID: FAQ_25
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Puedo devolver la hipoteca antes de tiempo? ¿Tiene comisión?
+RESPUESTA: Puedes solicitar un reembolso total o parcial. El coste depende del contrato, la fecha de firma, la modalidad y las reglas aplicables. En préstamos sujetos a la Ley 5/2019, la compensación pactada está limitada por la pérdida financiera y los topes legales. Hay que comprobar tu caso antes de dar una cifra.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: Solicitar simulación de liquidación al banco. No usar un porcentaje único para todas las hipotecas.
+FUENTES:
+[F11] Reembolso anticipado | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/vidahipoteca/Reembolso_anticipado.html
+
+---
+
+ID: FAQ_26
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: Al amortizar, ¿me conviene bajar cuota o reducir plazo?
+RESPUESTA: Bajar cuota libera presupuesto mensual; reducir plazo permite terminar antes. Con el mismo tipo fijo y sin otros cambios, reducir plazo suele ahorrar más intereses que bajar cuota. Podemos comparar ambos escenarios con el capital pendiente, la aportación y las condiciones del préstamo, incluyendo las comisiones que procedan.
+RUTA: SIMULAR
+NOTA_INTERNA_PARA_EL_EQUIPO: Comparar ambas alternativas; la elección depende de liquidez y prioridades del cliente.
+FUENTES:
+[F11] Reembolso anticipado | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/vidahipoteca/Reembolso_anticipado.html
+[C1] Cálculo propio reproducible: cuota = C*r/(1-(1+r)**(-n)); r = TIN anual en tanto por uno / 12; n = años*12. Si r=0: cuota=C/n. Intereses totales=cuota exacta*n-C. Comparar escenarios manteniendo constantes los demás supuestos.
+
+---
+
+ID: FAQ_27
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Puedo cambiar las condiciones o llevar la hipoteca a otro banco?
+RESPUESTA: Puedes solicitar una novación para modificar condiciones con tu entidad, o estudiar una subrogación acreedora para cambiar de banco. No son automáticas: requieren revisar la operación y sus costes. Conviene comparar el ahorro esperado con los gastos, comisiones y nuevas condiciones.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: Explicar ambas vías y trasladar la solicitud a un especialista hipotecario.
+FUENTES:
+[F12] Novación o cambio en las condiciones | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/vidahipoteca/Novacion_o_camb_d1cc24e53ab1d51.html
+[F13] Subrogación o cambio de banco | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/vidahipoteca/Subrogacion_o_cambio_de_banco.html
+
+---
+
+ID: FAQ_28
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: Ya he pagado la última cuota: ¿la hipoteca desaparece del Registro?
+RESPUESTA: Pagar el préstamo y cancelar la carga registral son actuaciones distintas. Aunque la deuda esté saldada, la hipoteca puede seguir inscrita hasta que se tramite la cancelación. Puedes pedir al banco información sobre el certificado de deuda cero y las gestiones necesarias para completar ese trámite.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: No afirmar que la carga está cancelada sin comprobar la documentación registral.
+FUENTES:
+[F14] Has pagado la hipoteca… ahora falta cancelarla en el Registro | https://clientebancario.bde.es/pcb/es/blog/pasos-y-costes-para-la-cancelacion-registral-de-la-hipoteca.html
+
+---
+
+ID: FAQ_29
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: No llego a pagar la próxima cuota. ¿Qué hago?
+RESPUESTA: Contacta cuanto antes con tu entidad para explicar la situación y estudiar opciones. Puede haber medidas de reestructuración o mecanismos de protección si cumples sus requisitos. No podemos garantizar una carencia, una ayuda ni una reducción sin revisar tu caso; lo adecuado es que te atienda el equipo especializado.
+RUTA: PERSONA
+NOTA_INTERNA_PARA_EL_EQUIPO: Priorizar la derivación por dificultades de pago. No tratarlo como una nueva simulación comercial.
+FUENTES:
+[F15] Reestructuración de la deuda hipotecaria | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/deudores-hipotecarios-sin-recursos/guia-textual/Medidas-Codigo-Buenas-Practicas/reestructuracion-de-la-deuda-hipotecaria.html
+
+---
+
+ID: FAQ_30
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué responsabilidad asumo si avalo una hipoteca?
+RESPUESTA: Puedes tener que responder por la deuda si el prestatario incumple, dentro del alcance de la garantía que firmes. Debes recibir información sobre tus obligaciones y riesgos antes de formalizarla. El contrato determina aspectos esenciales; no conviene asumir que tu responsabilidad se limita a una cuota o a un plazo informal.
+RUTA: PERSONA
+NOTA_INTERNA_PARA_EL_EQUIPO: Explicar el riesgo y derivar para revisar la garantía concreta antes de firmar.
+FUENTES:
+[F16] ¿Eres avalista de un préstamo? Estos son tus derechos de información. | https://clientebancario.bde.es/pcb/es/blog/eres_avalista_de_un_prestamo.html
+
+---
+
+ID: FAQ_31
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué necesito para abrir una cuenta?
+RESPUESTA: Debes acreditar tu identidad y aportar la información que solicite la entidad para cumplir sus obligaciones de identificación y conocimiento del cliente. La documentación varía según nacionalidad, residencia y situación. También pueden pedirte que justifiques el origen de los fondos. La apertura debe realizarse en el canal oficial del banco.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: Consultar la lista vigente para el perfil del cliente; no pedir contraseñas en el chat.
+FUENTES:
+[F17] ¿Cuáles son los trámites para abrir una cuenta? | https://clientebancario.bde.es/pcb/es/blog/cuales-son-los-tramites-para-abrir-una-cuenta-.html
+
+---
+
+ID: FAQ_32
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cómo sé qué comisiones tiene mi cuenta?
+RESPUESTA: Revisa el contrato y el Documento Informativo de Comisiones, que resume los servicios más habituales y facilita comparar cuentas. Comprueba los requisitos de cualquier bonificación. Para explicar un cargo concreto, hace falta consultar el concepto, la fecha y las condiciones aplicables a tu cuenta.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Informar sobre el documento; el importe de una comisión concreta requiere datos del banco.
+FUENTES:
+[F18] ¿Sabes qué es el Documento Informativo de Comisiones de una cuenta? | https://clientebancario.bde.es/pcb/es/blog/sabes-que-es-el-documento-informativo-de-comisiones-de-una-cuenta-.html?blog=%2Fwebcb%2FBlog
+
+---
+
+ID: FAQ_33
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Puedo cerrar mi cuenta? ¿Basta con dejarla a cero?
+RESPUESTA: Debes solicitar expresamente la cancelación; dejar la cuenta sin saldo no sustituye ese trámite. Antes, revisa recibos, tarjetas, pagos pendientes y gastos devengados. La cancelación es gratuita en contratos indefinidos o cuando procede según la duración del contrato. Solicita confirmación de que el cierre se ha completado.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: La demo orienta o prepara la solicitud; solo confirmar el cierre si lo acredita el sistema bancario.
+FUENTES:
+[F19] Cancelación por el titular | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/cuentasdepositos/cuentascorriente/guia-textual/cancelacion/Cancelacion_por_el_titular.html
+
+---
+
+ID: FAQ_34
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Es lo mismo ser titular que estar autorizado?
+RESPUESTA: No. El titular es parte del contrato de cuenta; el autorizado puede operar en nombre del titular dentro de las facultades que este le haya concedido. La autorización no lo convierte por sí sola en titular ni propietario del dinero. Hay que consultar el alcance de la autorización para cada operación.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Revisar permisos para operar, modificar condiciones o cerrar una cuenta.
+FUENTES:
+[F20] Qué significa estar “autorizado” en una cuenta bancaria y qué operaciones se pueden ordenar | https://clientebancario.bde.es/pcb/es/blog/eres-autorizado-en-una-cuenta-bancaria-con-que-facultades-hasta-cuando.html
+
+---
+
+ID: FAQ_35
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué es un certificado de titularidad y cómo lo consigo?
+RESPUESTA: Es un documento emitido por tu entidad que acredita quién es titular de una cuenta. Puede servir para justificar el IBAN ante una empresa o administración. Solicítalo por los canales oficiales de tu banco; la disponibilidad por aplicación, oficina y su posible coste dependen de sus condiciones.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: No generar un certificado bancario oficial desde el prototipo.
+FUENTES:
+[F21] ¿Para qué sirve el certificado de titularidad bancaria? ¿Me pueden cobrar comisión? | https://clientebancario.bde.es/pcb/es/blog/para_que_sirve_certificado_titularidad_bancaria.html
+
+---
+
+ID: FAQ_36
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué significa tener la cuenta en descubierto?
+RESPUESTA: Significa que la cuenta tiene saldo negativo porque el banco ha permitido pagos sin fondos suficientes. Puede generar intereses y comisiones conforme a las condiciones y límites aplicables. Si quieres evitar esta posibilidad, consulta con la entidad cómo dejar constancia de que no deseas que te conceda descubiertos.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Para discutir un cargo o regularizar deuda, consultar los movimientos y el contrato.
+FUENTES:
+[F22] ¿Puede el banco dejar mi cuenta en números rojos sin mi permiso? | https://clientebancario.bde.es/pcb/es/blog/numeros-rojos-descubierto-cuenta.html
+
+---
+
+ID: FAQ_37
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Está protegido mi dinero si el banco tiene problemas?
+RESPUESTA: Los depósitos elegibles en entidades adheridas al FGD español están cubiertos, con carácter general, hasta 100.000 euros por depositante y entidad, sumando sus depósitos en esa entidad. Hay supuestos especiales. Debe comprobarse qué fondo cubre tu banco: no todos los productos ni todas las entidades tienen la misma cobertura.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Comprobar entidad jurídica y fondo. No extender la garantía de depósitos a pérdidas de inversión.
+FUENTES:
+[F23] Depósitos dinerarios garantizados | FGD | https://www.fgd.es/informacion-general/que-es-el-fgd/depositos-dinerarios/depositos-dinerarios-garantizados/
+[F24] ¿Hasta qué importe garantiza el FGD? | FGD Educación Financiera | https://www.fgd.es/educacion-financiera/video/hasta-que-importe-garantiza-el-fgd/
+
+---
+
+ID: FAQ_38
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Qué diferencia hay entre una tarjeta de débito, crédito y revolving?
+RESPUESTA: Con débito utilizas normalmente el dinero de tu cuenta. Con crédito utilizas financiación que devuelves según la modalidad acordada. En revolving, la deuda se devuelve mediante cuotas y el crédito se repone conforme amortizas capital; los intereses pueden prolongar el pago. Revisa modalidad, coste y plazo antes de usarla.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: No presentar una cuota pequeña como señal suficiente de que la financiación es barata.
+FUENTES:
+[F25] Tipos de tarjetas | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/serviciospago/tarjetas/guia-textual/tipos-de-tarjeta/
+
+---
+
+ID: FAQ_39
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: He perdido la tarjeta o me la han robado. ¿Qué hago?
+RESPUESTA: Solicita su bloqueo inmediatamente mediante la aplicación, web o teléfono oficial de tu entidad. Revisa los movimientos y comunica cualquier operación que no reconozcas. Si ha habido robo, presenta denuncia. Este asistente no debe afirmar que la tarjeta está bloqueada sin una confirmación real del banco.
+RUTA: URGENTE
+NOTA_INTERNA_PARA_EL_EQUIPO: Dar primero la acción urgente y facilitar el canal oficial configurado; no inventar un teléfono.
+FUENTES:
+[F26] Uso fraudulento | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/serviciospago/tarjetas/guia-textual/uso-fraudulento/
+
+---
+
+ID: FAQ_40
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: Hay un pago con tarjeta que no reconozco. ¿Me lo devolverán?
+RESPUESTA: Comunícalo cuanto antes al banco y revisa si puede corresponder a una compra, suscripción o nombre comercial distinto. Si sospechas fraude, solicita medidas de protección y presenta la reclamación. El reintegro depende de si la operación fue autorizada y de las circunstancias; no puede prometerse sin la revisión correspondiente.
+RUTA: URGENTE
+NOTA_INTERNA_PARA_EL_EQUIPO: Distinguir cargo no autorizado y disputa comercial. No garantizar una devolución automática.
+FUENTES:
+[F27] Pagos con tu tarjeta que tú no has autorizado. | https://clientebancario.bde.es/pcb/es/blog/pagos-con-tu-tarjeta-que-tu-no-has-autorizado-.html
+
+---
+
+ID: FAQ_41
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: Me ha llegado un SMS del banco con un enlace urgente. ¿Lo abro?
+RESPUESTA: Si el mensaje te resulta sospechoso, no abras el enlace ni facilites claves. Entra directamente en la aplicación o web oficial y verifica el aviso con el banco por un canal conocido. Si ya introdujiste credenciales, avisa inmediatamente a la entidad, cambia las claves por su canal oficial y conserva las pruebas.
+RUTA: URGENTE
+NOTA_INTERNA_PARA_EL_EQUIPO: Si hay exposición de credenciales, priorizar protección de la cuenta y atención especializada.
+FUENTES:
+[F28] Detectadas campañas que suplantan la identidad de varias entidades bancarias a través de smishing | Ciudadanía | INCIBE | https://www.incibe.es/ciudadania/avisos/detectadas-campanas-que-suplantan-la-identidad-de-varias-entidades-bancarias
+
+---
+
+ID: FAQ_42
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: No puedo entrar en la aplicación o he olvidado la contraseña.
+RESPUESTA: Utiliza la recuperación de acceso de la aplicación o web oficial del banco. No compartas aquí tu contraseña, PIN ni códigos de un solo uso. Si el problema comenzó después de un enlace o llamada sospechosa, comunícalo inmediatamente a la entidad. Este prototipo no restablece credenciales ni verifica tu identidad bancaria.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: Usar solo el procedimiento oficial configurado. No inventar pasos de una aplicación desconocida.
+FUENTES:
+[F28] Detectadas campañas que suplantan la identidad de varias entidades bancarias a través de smishing | Ciudadanía | INCIBE | https://www.incibe.es/ciudadania/avisos/detectadas-campanas-que-suplantan-la-identidad-de-varias-entidades-bancarias
+[P1] Diseño propuesto para la demo: no describe funciones reales ni políticas del banco. Sin integración autorizada, el asistente informa y prepara solicitudes; no confirma consultas privadas, aprobaciones, bloqueos ni transferencias ejecutadas.
+
+---
+
+ID: FAQ_43
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cuánto tarda una transferencia? ¿La inmediata cuesta más?
+RESPUESTA: En una transferencia ordinaria electrónica en euros dentro del ámbito legal aplicable, el plazo general es hasta el siguiente día hábil desde la recepción de la orden; influyen la hora de corte y los festivos. Las inmediatas llegan en segundos. Su comisión no puede superar la de una ordinaria equivalente bajo las reglas europeas aplicables.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Confirmar moneda, destino, modalidad y hora. No aplicar plazos SEPA a cualquier transferencia internacional.
+FUENTES:
+[F36] Real Decreto-ley 19/2018 de servicios de pago. Arts. 50, 55 y 58 | https://www.boe.es/buscar/act.php?id=BOE-A-2018-16036
+[F30] El próximo día 9 cambian los pagos inmediatos | https://clientebancario.bde.es/pcb/es/blog/novedades-en-pagos-inmediatos-a-partir-del-9-de-octubre-de-2025.html
+
+---
+
+ID: FAQ_44
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: He hecho una transferencia al destinatario equivocado. ¿Se puede cancelar?
+RESPUESTA: Contacta inmediatamente con tu entidad. Si la orden aún no se ha ejecutado, puede haber margen para cancelarla según su estado. Si ya se ejecutó, normalmente no puede deshacerse unilateralmente: el banco puede intentar recuperar el dinero, pero no garantizar el resultado. Si sospechas una estafa, indícalo expresamente.
+RUTA: URGENTE
+NOTA_INTERNA_PARA_EL_EQUIPO: Preguntar si está pendiente o ejecutada; no prometer recuperación ni confundir error con fraude.
+FUENTES:
+[F29] ¿Cuándo llegará una transferencia a destino? ¿Puedo anularla? ¿Conoces las horas de corte? | https://clientebancario.bde.es/pcb/es/blog/cuando-llegara-una-transferencia-a-destino--puedo-anularla--conoces-las-horas-de-corte-.html
+[F30] El próximo día 9 cambian los pagos inmediatos | https://clientebancario.bde.es/pcb/es/blog/novedades-en-pagos-inmediatos-a-partir-del-9-de-octubre-de-2025.html
+
+---
+
+ID: FAQ_45
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: El nombre del beneficiario no coincide con el IBAN. ¿Continúo?
+RESPUESTA: Detén la operación y verifica los datos con el destinatario por un canal fiable. El servicio puede indicar coincidencia, coincidencia aproximada, falta de coincidencia o imposibilidad de verificar. Una coincidencia aproximada puede deberse al nombre completo registrado; no confirma por sí sola que el pago sea seguro.
+RUTA: FAQ
+NOTA_INTERNA_PARA_EL_EQUIPO: Explicar el aviso sin recomendar ignorarlo. Si persiste la duda, contactar con la entidad.
+FUENTES:
+[F31] Nuevo servicio gratuito de verificación del beneficiario a partir del 9 de octubre de 2025 | https://clientebancario.bde.es/pcb/es/blog/nuevo-servicio-gratuito-de-verificacion-del-beneficiario-a-partir-del-9-de-octubre-de-2025-.html?blog=%2Fwebcb%2FBlog%2FServiciosPago
+
+---
+
+ID: FAQ_46
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Puedo devolver un recibo que me han cargado?
+RESPUESTA: Depende de si lo autorizaste y de sus condiciones. La normativa contempla ocho semanas para determinados adeudos autorizados y hasta trece meses para notificar los no autorizados, sin demora injustificada. En autorizados importan el importe consentido y lo que razonablemente esperabas pagar. Devolver el recibo no cancela automáticamente la deuda o el contrato del servicio.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: Preguntar autorización, fecha y tipo de adeudo; comprobar régimen y contrato antes de tramitar.
+FUENTES:
+[F32] Adeudos domiciliados | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/serviciospago/Adeudos_domiciliados.html
+
+---
+
+ID: FAQ_47
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: He enviado un Bizum a otra persona por error. ¿Lo puedo anular?
+RESPUESTA: Un Bizum enviado y ejecutado a otro usuario no puede cancelarse directamente. Puedes pedir al destinatario que lo devuelva y contactar con tu banco para estudiar las opciones. Una solicitud de dinero recibida es distinta: puedes rechazarla antes de aceptarla. Si sospechas fraude, comunícalo a tu entidad.
+RUTA: BANCO
+NOTA_INTERNA_PARA_EL_EQUIPO: Distinguir envío ejecutado, solicitud y operación fraudulenta.
+FUENTES:
+[F33] Cómo cancelar un Bizum y ejemplos - Bizum | https://bizum.com/es/blog/como-cancelar-un-bizum-y-ejemplos/
+
+---
+
+ID: FAQ_48
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: ¿Cómo presento una reclamación al banco?
+RESPUESTA: Presenta primero un escrito al Servicio de Atención al Cliente o al defensor del cliente de tu entidad y guarda el justificante. Si eres consumidor y no recibes respuesta en quince días hábiles para servicios de pago, o un mes para otras reclamaciones, puedes acudir al Banco de España; también si discrepas de la resolución.
+RUTA: PERSONA
+NOTA_INTERNA_PARA_EL_EQUIPO: Facilitar el canal oficial y conservar referencias. La respuesta depende de la materia y del reclamante.
+FUENTES:
+[F34] Cómo realizar una reclamación | https://clientebancario.bde.es/pcb/es/menu-horizontal/podemosayudarte/consultasreclama/comorealizarrecl/
+
+---
+
+ID: FAQ_49
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: Mi cuenta está bloqueada. ¿Me podéis decir por qué?
+RESPUESTA: La causa concreta debe comprobarla tu entidad. Puede estar relacionada, por ejemplo, con documentación pendiente o con discrepancias entre titulares, pero no debemos adivinarla. Contacta por el canal oficial para conocer el motivo, los documentos que procedan y el proceso para resolverlo. El prototipo no puede desbloquear cuentas.
+RUTA: PERSONA
+NOTA_INTERNA_PARA_EL_EQUIPO: No inferir el motivo desde una frase del cliente ni prometer una fecha de desbloqueo.
+FUENTES:
+[F35] Bloqueo de la cuenta | https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/cuentasdepositos/cuentascorriente/guia-textual/vidacuenta/Bloqueo_de_la_cuenta.html
+[P1] Diseño propuesto para la demo: no describe funciones reales ni políticas del banco. Sin integración autorizada, el asistente informa y prepara solicitudes; no confirma consultas privadas, aprobaciones, bloqueos ni transferencias ejecutadas.
+
+---
+
+ID: FAQ_50
+AMBITO: España. Base general para un prototipo; confirmar condiciones concretas con el banco.
+FECHA_DE_REVISION: 2026-10-16
+PREGUNTA: Quiero hablar con una persona. ¿Tengo que repetirlo todo?
+RESPUESTA: En esta demo puedes solicitar la derivación a una persona. Antes, el asistente prepara un resumen del motivo, los datos que has confirmado, lo que ya se ha intentado y lo que queda pendiente. Puedes revisarlo. Si no existe integración con un gestor real, se mostrará como derivación preparada, no como conexión realizada.
+RUTA: PERSONA
+NOTA_INTERNA_PARA_EL_EQUIPO: Diseño propuesto para el reto: respetar la solicitud y no afirmar una transferencia inexistente.
+FUENTES:
+[P1] Diseño propuesto para la demo: no describe funciones reales ni políticas del banco. Sin integración autorizada, el asistente informa y prepara solicitudes; no confirma consultas privadas, aprobaciones, bloqueos ni transferencias ejecutadas.
