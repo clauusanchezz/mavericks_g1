@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asistente del banco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #ffffff;
+    --mist: #f3f4f7;
+    --line: #e4e6ec;
+    --ink: #14161f;
+    --ink-soft: #5b6070;
+    --cobalt: #3347e8;
+    --cobalt-soft: #e9ecfe;
+    --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --serif: "Instrument Serif", Georgia, serif;
+    --orb: clamp(104px, 23vh, 168px);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body.chatting { --orb: 60px; }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0 6px;
+  }
+
+  .brand { font-weight: 600; }
+
+  .reset {
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink-soft);
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .reset:hover { color: var(--ink); border-color: var(--ink-soft); }
+
+  .actions { display: flex; align-items: center; gap: 8px; }
+
+  .speak {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    color: var(--ink-soft);
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .speak:hover:not(:disabled) { color: var(--ink); border-color: var(--ink-soft); }
+  .speak[aria-pressed="true"] { color: var(--cobalt); border-color: var(--cobalt); background: var(--cobalt-soft); }
+  .speak:disabled { opacity: 0.4; cursor: default; }
+
+  :focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+
+  /* The orb is the assistant's presence: one sphere that breathes, works and speaks. */
+  .stage {
+    display: flex;
+    justify-content: center;
+    padding: 14px 0 18px;
+    border-bottom: 1px solid transparent;
+    transition: padding 0.6s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s;
+  }
+  body.chatting .stage { padding: 6px 0 12px; border-bottom-color: var(--line); }
+
+  .orb {
+    --gx: 0px;
+    --gy: 0px;
+    position: relative;
+    width: var(--orb);
+    height: var(--orb);
+    border-radius: 50%;
+    overflow: hidden;
+    background: radial-gradient(circle at 32% 26%, #b7c0ff 0%, #5368f5 38%, var(--cobalt) 62%, #1a258f 100%);
+    box-shadow:
+      0 calc(var(--orb) * 0.22) calc(var(--orb) * 0.4) calc(var(--orb) * -0.14) rgba(51, 71, 232, 0.55),
+      inset 0 calc(var(--orb) * -0.08) calc(var(--orb) * 0.2) rgba(12, 18, 90, 0.4);
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1), height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: breathe 6s ease-in-out infinite;
+  }
+
+  /* Slow colour swirl inside the sphere. */
+  .orb .swirl {
+    position: absolute;
+    inset: -25%;
+    background: conic-gradient(from 0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.55) 18%, rgba(130, 150, 255, 0) 38%, rgba(176, 130, 255, 0.5) 58%, rgba(255, 255, 255, 0) 78%, rgba(255, 255, 255, 0.35) 92%, rgba(255, 255, 255, 0) 100%);
+    filter: blur(calc(var(--orb) * 0.1));
+    animation: swirl 16s linear infinite;
+  }
+
+  /* Soft highlight that follows the pointer a little. */
+  .orb .gloss {
+    position: absolute;
+    top: 8%;
+    left: 14%;
+    width: 48%;
+    height: 34%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(var(--gx), var(--gy));
+    transition: transform 0.35s ease-out;
+  }
+
+  .orb .bars {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--orb) * 0.05);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .orb .bars i {
+    display: block;
+    width: calc(var(--orb) * 0.055);
+    height: calc(var(--orb) * 0.07);
+    border-radius: 999px;
+    background: #fff;
+  }
+
+  .stage[data-state="thinking"] .orb { animation: pulse 1.4s ease-in-out infinite; }
+  .stage[data-state="thinking"] .swirl { animation-duration: 2.8s; }
+  .stage[data-state="thinking"] .bars { opacity: 1; }
+  .stage[data-state="thinking"] .bars i { animation: wave 0.95s ease-in-out infinite; }
+  .stage[data-state="thinking"] .bars i:nth-child(2) { animation-delay: 0.1s; }
+  .stage[data-state="thinking"] .bars i:nth-child(3) { animation-delay: 0.2s; }
+  .stage[data-state="thinking"] .bars i:nth-child(4) { animation-delay: 0.3s; }
+  .stage[data-state="thinking"] .bars i:nth-child(5) { animation-delay: 0.4s; }
+
+  .stage[data-state="speaking"] .orb { animation: speak 1.6s ease-in-out infinite; }
+  .stage[data-state="speaking"] .swirl { animation-duration: 7s; }
+
+  @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+  @keyframes pulse { 0%, 100% { transform: scale(0.97); } 50% { transform: scale(1.07); } }
+  @keyframes speak { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  @keyframes swirl { to { transform: rotate(360deg); } }
+  @keyframes wave {
+    0%, 100% { height: calc(var(--orb) * 0.07); }
+    50% { height: calc(var(--orb) * 0.3); }
+  }
+
+  main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 0 12px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  main::-webkit-scrollbar { display: none; }
+
+  .welcome { text-align: center; }
+  .welcome h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 6.5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }
+  .welcome p { margin: 0 auto 24px; color: var(--ink-soft); max-width: 44ch; }
+
+  .suggestions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .suggestion {
+    font: inherit;
+    font-size: 15px;
+    text-align: left;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .suggestion:hover { border-color: var(--cobalt); background: var(--cobalt-soft); }
+
+  .row { display: flex; margin-bottom: 22px; }
+  .row.user { justify-content: flex-end; }
+
+  .bubble {
+    max-width: 82%;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 20px 20px 6px 20px;
+    padding: 10px 16px;
+    overflow-wrap: anywhere;
+  }
+
+  .reply { min-width: 0; max-width: 94%; }
+  .reply .text { margin: 0; overflow-wrap: anywhere; }
+  .reply .word { animation: appear 0.25s ease-out both; }
+
+  @keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .thinking-label { color: var(--ink-soft); font-size: 15px; }
+
+  .source {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    background: var(--mist);
+    border-radius: 999px;
+    padding: 2px 10px;
+  }
+
+  .feedback { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 14px; }
+  .feedback button {
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 14px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .feedback button:hover { border-color: var(--cobalt); background: var(--cobalt-soft); }
+  .feedback .thanks { color: var(--ink-soft); }
+
+  .handoff {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--cobalt);
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: var(--mist);
+  }
+  .handoff strong { display: block; margin-bottom: 2px; }
+  .handoff details { margin-top: 10px; font-size: 14px; color: var(--ink-soft); }
+  .handoff summary { cursor: pointer; }
+  .handoff pre {
+    margin: 8px 0 0;
+    white-space: pre-wrap;
+    font: inherit;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+
+  .error { color: #b3261e; }
+
+  form {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin: 8px 0 18px;
+    padding: 8px 8px 8px 18px;
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    background: var(--paper);
+    box-shadow: 0 6px 24px rgba(20, 22, 31, 0.06);
+    transition: border-color 0.15s;
+  }
+  form:focus-within { border-color: var(--cobalt); }
+
+  textarea {
+    flex: 1;
+    resize: none;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: var(--ink);
+    background: transparent;
+    padding: 8px 0;
+    max-height: 140px;
+  }
+  textarea:focus-visible { outline: none; }
+  textarea::placeholder { color: #9096a6; }
+
+  .send {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--cobalt);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s, opacity 0.15s;
+  }
+  .send:hover:not(:disabled) { background: #2437c9; transform: translateY(-1px); }
+  .send:disabled { opacity: 0.35; cursor: default; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .stage[data-state="thinking"] .bars i { height: calc(var(--orb) * 0.2); }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand">Asistente del banco</div>
+    <div class="actions">
+      <button class="speak" id="speak" type="button" aria-pressed="false" aria-label="Leer las respuestas en voz alta" title="Leer las respuestas en voz alta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+      </button>
+      <button class="reset" id="reset" type="button">Nueva conversación</button>
+    </div>
+  </header>
+
+  <div class="stage" id="stage" data-state="idle">
+    <div class="orb" id="orb" aria-hidden="true">
+      <div class="swirl"></div>
+      <div class="gloss"></div>
+      <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+  <main id="log" aria-live="polite"></main>
+
+  <form id="form" autocomplete="off">
+    <textarea id="input" rows="1" maxlength="500" placeholder="Escribe tu pregunta" aria-label="Tu pregunta"></textarea>
+    <button class="send" id="send" type="submit" aria-label="Enviar pregunta" disabled>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+    </button>
+  </form>
+</div>
+
+<script>
+  var SUGGESTIONS = [
+    "¿Qué es el euríbor y cómo afecta a mi hipoteca?",
+    "¿En qué se diferencian la TAE y el TIN?",
+    "¿Mis ahorros están garantizados si quiebra el banco?",
+    "¿Qué hace falta para abrir una cuenta?"
+  ];
+  var HANDOFF_TEXT = "Esto lo puede resolver mejor una persona del equipo. Te paso con un compañero y ya le explico de qué se trata.";
+  var ERROR_TEXT = "No he podido responder ahora mismo. Inténtalo de nuevo en unos segundos.";
+  var MIN_THINKING_MS = 900;
+  var WORD_DELAY_MS = 28;
+  var MAX_HISTORY = 12;
+  var GLOSS_RANGE_PX = 10;
+
+  var log = document.getElementById("log");
+  var form = document.getElementById("form");
+  var input = document.getElementById("input");
+  var sendButton = document.getElementById("send");
+  var resetButton = document.getElementById("reset");
+  var stage = document.getElementById("stage");
+  var orb = document.getElementById("orb");
+
+  var FOLLOWUP_TEXT = " ¿Te ha servido esta respuesta?";
+  var NO_VOICE_TITLE = "Este navegador no tiene una voz en español";
+  var speakButton = document.getElementById("speak");
+  var voiceOn = false;
+  var spanishVoice = null;
+  var isSpeaking = false;
+  var speechSupported = "speechSynthesis" in window;
+
+  var turns = [];
+  var busy = false;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) { node.className = className; }
+    if (text !== undefined) { node.textContent = text; }
+    return node;
+  }
+
+  function setOrbState(state) { stage.setAttribute("data-state", state); }
+
+  function pickVoice() {
+    var voices = window.speechSynthesis.getVoices();
+    spanishVoice = null;
+    for (var i = 0; i < voices.length; i++) {
+      if (voices[i].lang.toLowerCase() === "es-es") { spanishVoice = voices[i]; break; }
+    }
+    if (!spanishVoice) {
+      for (var j = 0; j < voices.length; j++) {
+        if (voices[j].lang.toLowerCase().indexOf("es") === 0) { spanishVoice = voices[j]; break; }
+      }
+    }
+    speakButton.disabled = !spanishVoice;
+    speakButton.title = spanishVoice ? "Leer las respuestas en voz alta" : NO_VOICE_TITLE;
+  }
+
+  function stopSpeaking() {
+    if (!speechSupported) { return; }
+    isSpeaking = false;
+    window.speechSynthesis.cancel();
+  }
+
+  function speak(text) {
+    if (!speechSupported || !voiceOn || !spanishVoice) { return; }
+    stopSpeaking();
+    var utterance = new SpeechSynthesisUtterance(text);
+    utterance.voice = spanishVoice;
+    utterance.lang = spanishVoice.lang;
+    utterance.onstart = function () { isSpeaking = true; setOrbState("speaking"); };
+    var finished = function () {
+      isSpeaking = false;
+      if (!busy) { setOrbState("idle"); }
+    };
+    utterance.onend = finished;
+    utterance.onerror = finished;
+    window.speechSynthesis.speak(utterance);
+  }
+
+  if (speechSupported) {
+    pickVoice();
+    window.speechSynthesis.addEventListener("voiceschanged", pickVoice);
+  } else {
+    speakButton.hidden = true;
+  }
+
+  function scrollDown() { log.scrollTop = log.scrollHeight; }
+
+  function showWelcome() {
+    document.body.classList.remove("chatting");
+    setOrbState("idle");
+    log.innerHTML = "";
+    var welcome = el("section", "welcome");
+    welcome.appendChild(el("h1", null, "¿En qué puedo ayudarte?"));
+    welcome.appendChild(el("p", null, "Resuelvo dudas frecuentes sobre hipotecas, cuentas y pagos. Si no tengo la respuesta, te paso con una persona."));
+    var list = el("div", "suggestions");
+    SUGGESTIONS.forEach(function (question) {
+      var button = el("button", "suggestion", question);
+      button.type = "button";
+      button.addEventListener("click", function () { send(question); });
+      list.appendChild(button);
+    });
+    welcome.appendChild(list);
+    log.appendChild(welcome);
+  }
+
+  function removeFeedback() {
+    var old = log.querySelectorAll(".feedback:not(.done)");
+    old.forEach(function (node) { node.remove(); });
+  }
+
+  function addUserMessage(text) {
+    var row = el("div", "row user");
+    row.appendChild(el("div", "bubble", text));
+    log.appendChild(row);
+    scrollDown();
+  }
+
+  function addThinking() {
+    var row = el("div", "row");
+    row.appendChild(el("div", "thinking-label", "Buscando la respuesta"));
+    log.appendChild(row);
+    scrollDown();
+    return row;
+  }
+
+  function revealWords(container, text, done) {
+    var words = text.split(" ");
+    var index = 0;
+    function next() {
+      if (index >= words.length) { done(); return; }
+      var span = el("span", "word", (index > 0 ? " " : "") + words[index]);
+      container.appendChild(span);
+      index += 1;
+      scrollDown();
+      setTimeout(next, WORD_DELAY_MS);
+    }
+    next();
+  }
+
+  function addFeedback(parent) {
+    var box = el("div", "feedback");
+    var yes = el("button", null, "Sí, gracias");
+    var no = el("button", null, "No del todo");
+    yes.type = "button";
+    no.type = "button";
+    function answer(solved) {
+      fetch("/api/solved", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ solved: solved })
+      }).catch(function () {});
+      box.innerHTML = "";
+      box.classList.add("done");
+      box.appendChild(el("span", "thanks", solved ? "Me alegro." : "Gracias, lo tendremos en cuenta. Puedes reformular tu pregunta."));
+    }
+    yes.addEventListener("click", function () { answer(true); });
+    no.addEventListener("click", function () { answer(false); });
+    box.appendChild(yes);
+    box.appendChild(no);
+    parent.appendChild(box);
+    scrollDown();
+  }
+
+  function renderReply(thinkingRow, result) {
+    var row = thinkingRow;
+    row.innerHTML = "";
+    var reply = el("div", "reply");
+    row.appendChild(reply);
+
+    if (result.status === "handoff") {
+      var card = el("div", "handoff");
+      card.appendChild(el("strong", null, "Te paso con una persona"));
+      card.appendChild(el("div", null, HANDOFF_TEXT));
+      if (result.handoff_summary) {
+        var details = el("details");
+        details.appendChild(el("summary", null, "Nota para el operador"));
+        details.appendChild(el("pre", null, result.handoff_summary));
+        card.appendChild(details);
+      }
+      reply.appendChild(card);
+      speak(HANDOFF_TEXT);
+      finishTurn(HANDOFF_TEXT, result);
+      return;
+    }
+
+    speak(result.answer.replace(FOLLOWUP_TEXT, ""));
+
+    var text = el("p", "text");
+    reply.appendChild(text);
+    var show = function () {
+      if (result.source_faq_id) {
+        var chip = el("span", "source", "Fuente: " + result.source_faq_id);
+        chip.title = "Confianza " + result.confidence.toFixed(2);
+        reply.appendChild(chip);
+      }
+      if (result.status === "answered") { addFeedback(reply); }
+      finishTurn(result.answer, result);
+    };
+    if (reduceMotion) {
+      text.textContent = result.answer;
+      show();
+    } else {
+      setOrbState("speaking");
+      revealWords(text, result.answer, show);
+    }
+  }
+
+  function renderError(thinkingRow, message) {
+    thinkingRow.innerHTML = "";
+    var reply = el("div", "reply");
+    reply.appendChild(el("p", "text error", message));
+    thinkingRow.appendChild(reply);
+    scrollDown();
+    setOrbState("idle");
+    setBusy(false);
+  }
+
+  function finishTurn(content, result) {
+    turns.push({ role: "assistant", content: content, status: result.status, source_faq_id: result.source_faq_id });
+    turns = turns.slice(-MAX_HISTORY);
+    if (!isSpeaking) { setOrbState("idle"); }
+    setBusy(false);
+    scrollDown();
+  }
+
+  function setBusy(value) {
+    busy = value;
+    sendButton.disabled = value || input.value.trim() === "";
+    input.disabled = value;
+    if (!value) { input.focus(); }
+  }
+
+  function send(text) {
+    text = text.trim();
+    if (!text || busy) { return; }
+    var welcome = log.querySelector(".welcome");
+    if (welcome) { welcome.remove(); }
+    stopSpeaking();
+    document.body.classList.add("chatting");
+    removeFeedback();
+    addUserMessage(text);
+    var snapshot = turns.slice();
+    turns.push({ role: "user", content: text });
+    input.value = "";
+    autoGrow();
+    setBusy(true);
+    setOrbState("thinking");
+    var thinkingRow = addThinking();
+    var started = Date.now();
+
+    fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text, history: snapshot })
+    })
+      .then(function (response) {
+        return response.json().then(function (data) { return { ok: response.ok, data: data }; });
+      })
+      .then(function (outcome) {
+        var wait = Math.max(0, MIN_THINKING_MS - (Date.now() - started));
+        setTimeout(function () {
+          if (!outcome.ok) { renderError(thinkingRow, outcome.data.error || ERROR_TEXT); return; }
+          renderReply(thinkingRow, outcome.data);
+        }, wait);
+      })
+      .catch(function () { renderError(thinkingRow, ERROR_TEXT); });
+  }
+
+  function autoGrow() {
+    input.style.height = "auto";
+    input.style.height = Math.min(input.scrollHeight, 140) + "px";
+    sendButton.disabled = busy || input.value.trim() === "";
+  }
+
+  document.addEventListener("pointermove", function (event) {
+    if (reduceMotion) { return; }
+    var box = orb.getBoundingClientRect();
+    var dx = (event.clientX - (box.left + box.width / 2)) / window.innerWidth;
+    var dy = (event.clientY - (box.top + box.height / 2)) / window.innerHeight;
+    orb.style.setProperty("--gx", (dx * GLOSS_RANGE_PX * 2).toFixed(1) + "px");
+    orb.style.setProperty("--gy", (dy * GLOSS_RANGE_PX * 2).toFixed(1) + "px");
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    send(input.value);
+  });
+  input.addEventListener("input", autoGrow);
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      send(input.value);
+    }
+  });
+  resetButton.addEventListener("click", function () {
+    if (busy) { return; }
+    stopSpeaking();
+    turns = [];
+    showWelcome();
+    input.focus();
+  });
+
+  speakButton.addEventListener("click", function () {
+    voiceOn = !voiceOn;
+    speakButton.setAttribute("aria-pressed", voiceOn ? "true" : "false");
+    if (voiceOn) { speak("Voz activada"); } else { stopSpeaking(); setOrbState(busy ? "thinking" : "idle"); }
+  });
+
+  showWelcome();
+  input.focus();
+</script>
+</body>
+</html>
